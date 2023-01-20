@@ -16,6 +16,9 @@ class TestEngishToFrench(TestCase):
     def test_how_are_you(self):
         self.assertEqual(english_to_french('How are you?'), 'Comment es-tu?')
 
+    def test_non_hello(self):
+        self.assertNotEqual(english_to_french('Some text'), 'Bonjour')
+
 
 class TestFrenchToEnglish(TestCase):
     def test_null(self):
@@ -29,6 +32,9 @@ class TestFrenchToEnglish(TestCase):
 
     def test_how_are_you(self):
         self.assertEqual(french_to_english('Comment es-tu?'), 'How are you?')
+
+    def test_non_hello(self):
+        self.assertNotEqual(french_to_english('Some text'), 'Hello')
 
 
 if __name__ == '__main__':
